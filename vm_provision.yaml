@@ -8,13 +8,13 @@
     vcpus: 2
     ram_mb: 2048
     cleanup: no
-    net: default
+    net: bridge0
     ssh_pub_key: "/root/.ssh/id_rsa.pub"
 
   tasks:
-    - name: KVM Provision role
+    - name: VM Provision role
       include_role:
-        name: kvm_provision
+        name: vm_provision
       vars:
         libvirt_pool_dir: "{{ pool_dir }}"
         vm_name: "{{ vm }}"
